@@ -7,7 +7,6 @@ import socketpool
 import time
 import os
 import storage
-import gc
 
 import wsgiserver as server
 from adafruit_wsgi.wsgi_app import WSGIApp
@@ -164,8 +163,6 @@ def write_script(request, filename):
     fields = data.split("&")
     form_data = {}
     for field in fields:
-        gc.collect()
-        memfree = gc.mem_free()
         key,value = field.split('=')
         form_data[key] = value
 
@@ -188,16 +185,10 @@ def write_new_script(request):
     if(request.method == 'GET'):
         response = new_html
     else:
-        gc.collect()
-        memfree = gc.mem_free()
-        print("Free mem",memfree)
         data = request.body.getvalue()
         fields = data.split("&")
         form_data = {}
         for field in fields:
-            gc.collect()
-            memfree = gc.mem_free()
-            print("Free mem",memfree)
             key,value = field.split('=')
             form_data[key] = value
         #print(form_data)
